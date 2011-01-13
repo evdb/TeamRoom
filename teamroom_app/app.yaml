@@ -11,5 +11,8 @@ handlers:
 - url: /favicon.ico
   static_files: static/group.png
   upload: static/group.png
+- url: /
+  script: main.py
 - url: /.*
   script: main.py
+  login: required

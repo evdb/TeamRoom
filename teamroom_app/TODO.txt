@@ -1,0 +1,8 @@
+create homepage handler
+
+allow user to log in
+
+allow user to create a new room
+
+list rooms that user has access to
+

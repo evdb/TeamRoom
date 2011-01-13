@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome{% endblock %}
+
+{% block content %}
+    <h1>Add a new room...</h1>
+
+    {% if error %}
+        <div class="error">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <form action="/room_add" method="post">
+        Room name <input type="text" name="room_name" value="{{ room_name }}"/><br>
+        
+        <input type="submit">
+    </form>
+
+{% endblock %}
