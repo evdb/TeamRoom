@@ -1,9 +1,7 @@
-from google.appengine.ext import webapp
-from google.appengine.ext.webapp import template
-
 from teamroom.models import Room
+from teamroom        import request
 
-class Handler(webapp.RequestHandler):
+class Handler(request.RequestHandler):
     def get( self, slug ):
         
         room = Room.get_by_slug(slug);
@@ -17,7 +15,5 @@ class Handler(webapp.RequestHandler):
             "room": room,
         }
 
-        self.response.out.write(
-            template.render(path, template_values)
-        )
+        self.render_template(path, template_values)
 

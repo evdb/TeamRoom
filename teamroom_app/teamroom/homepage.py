@@ -1,13 +1,10 @@
-from google.appengine.ext import webapp
-from google.appengine.ext.webapp import template
+from teamroom import request
 
-class Handler(webapp.RequestHandler):
+class Handler(request.RequestHandler):
     def get(self):
 
         path = "templates/index.html"
         template_values = {}
 
-        self.response.out.write(
-            template.render(path, template_values)
-        )
+        self.render_template(path, template_values)
 

@@ -9,6 +9,11 @@
         <ul id="menu">
             <li><a href="/">Home</a></li>
             <li><a href="/room_add">Add Room</a></li>
+            {% if user %}
+            <li><a href="{{ logout_url }}">Log out {{ user.nickname }}</a></li>
+            {% else %}            
+            <li><a href="{{ login_url }}">Log in</a></li>
+            {% endif %}
         </ul>
 
         {% block content %}

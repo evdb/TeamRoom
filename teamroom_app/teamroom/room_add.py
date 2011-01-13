@@ -1,9 +1,9 @@
 from google.appengine.ext import webapp
-from google.appengine.ext.webapp import template
 
 from teamroom.models import Room
+from teamroom import request
 
-class Handler(webapp.RequestHandler):
+class Handler(request.RequestHandler):
 
     def get( self ):
         self.display_form();
@@ -33,12 +33,13 @@ class Handler(webapp.RequestHandler):
 
 
     def display_form( self, error="", room_name="" ):
+
         path = "templates/room_add.html"
+
         template_values = {
             "error":     error,
             "room_name": room_name,
         }
-        self.response.out.write(
-            template.render(path, template_values)
-        )
+        
+        self.render_template(path, template_values);
         
