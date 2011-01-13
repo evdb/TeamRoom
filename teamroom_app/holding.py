@@ -2,8 +2,6 @@ from google.appengine.ext import webapp
 from google.appengine.ext.webapp import util
 from google.appengine.ext.webapp import template
 
-
-
 class MainHandler(webapp.RequestHandler):
     def get(self):
         path = "templates/holding.html"
@@ -11,7 +9,6 @@ class MainHandler(webapp.RequestHandler):
         self.response.out.write(
             template.render(path, template_values)
         )
-
 
 def main():
     application = webapp.WSGIApplication([('/', MainHandler)],
