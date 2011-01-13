@@ -3,8 +3,8 @@ import logging
 import re
 
 class Room(db.Model):
-    name    = db.StringProperty()
-    slug    = db.StringProperty()
+    name    = db.StringProperty(required=True)
+    slug    = db.StringProperty(required=True)
     created = db.DateTimeProperty(auto_now_add=True)
     
     @classmethod

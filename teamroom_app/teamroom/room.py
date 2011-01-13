@@ -1,5 +1,5 @@
-from teamroom.models import Room
-from teamroom        import request
+from teamroom.models.room import Room
+from teamroom import request
 
 class Handler(request.RequestHandler):
     def get( self, slug ):

@@ -1,6 +1,5 @@
 from google.appengine.ext import webapp
-
-from teamroom.models import Room
+from teamroom.models.room import Room
 from teamroom import request
 
 class Handler(request.RequestHandler):
