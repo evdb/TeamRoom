@@ -1,5 +1,6 @@
 from google.appengine.ext import webapp
 from teamroom.models.room import Room
+from teamroom.models.membership import Membership
 from teamroom import request
 
 class Handler(request.RequestHandler):
@@ -28,6 +29,10 @@ class Handler(request.RequestHandler):
         room = Room( name=room_name, slug=slug )
         room.put()
 
+        # link room to user
+        membership = Membership( room=room, member=self.get_current_member() )
+        membership.put()
+        
         self.redirect( "/" + room.slug )
 
 
